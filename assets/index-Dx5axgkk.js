@@ -213,6 +213,10 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   width: 100%;
   height: 500px;
   overflow: auto;
+
+  @media (max-width: 400px) {
+    height: 300px;
+  }
 `,Ju=Le.div`
     display: flex;
     flex-direction: row;
