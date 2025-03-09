@@ -46,10 +46,13 @@ export const DivTexts = styled.div`
   flex-direction: column;
   gap: 8px;
 
-    @media (min-width: 200px) {
+  @media (min-width: 200px) {
     gap: 4px;
     width: 100%;
-    }
+  }
+
+  @media (max-width: 450px) {
+    margin-top: 30px;
   }
 `;
 
@@ -83,7 +86,7 @@ export const ChecklistContainer = styled.div`
   height: 500px;
   overflow: auto;
 
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     height: 300px;
   }
 `;
@@ -94,7 +97,7 @@ export const Navigation = styled.div`
     justify-content: space-between;
     width: 100%;
 
-  @media (max-width: 400px) {
-    margin-top: 10px;
+  @media (max-width: 450px) {
+    margin-top: 30px;
   }
 `;
