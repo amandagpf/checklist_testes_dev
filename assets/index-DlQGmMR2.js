@@ -192,10 +192,13 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   flex-direction: column;
   gap: 8px;
 
-    @media (min-width: 200px) {
+  @media (min-width: 200px) {
     gap: 4px;
     width: 100%;
-    }
+  }
+
+  @media (max-width: 450px) {
+    margin-top: 30px;
   }
 `,Xu=Le.h1`
   font-size: 28px;
@@ -223,7 +226,7 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
   height: 500px;
   overflow: auto;
 
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     height: 300px;
   }
 `,Ju=Le.div`
@@ -232,8 +235,8 @@ Please change the parent <Route path="${N}"> to <Route path="${N==="/"?"*":`${N}
     justify-content: space-between;
     width: 100%;
 
-  @media (max-width: 400px) {
-    margin-top: 10px;
+  @media (max-width: 450px) {
+    margin-top: 30px;
   }
 `,mm=Le.button`
     background-color: ${({theme:n})=>n.COLORS.transparent};
