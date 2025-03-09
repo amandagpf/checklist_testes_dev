@@ -73,6 +73,10 @@ export const ChecklistContainer = styled.div`
   width: 100%;
   height: 500px;
   overflow: auto;
+
+  @media (max-width: 400px) {
+    height: 300px;
+  }
 `;
 
 export const Navigation = styled.div`
