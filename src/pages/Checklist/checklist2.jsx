@@ -17,6 +17,17 @@ function Checklist2() {
 
     const [isButtonEnabled, setIsButtonEnabled] = useState(false)
 
+    function getChecklistProgress() {
+        return [0, 1, 2, 3].map(page => {
+            const savedItems = localStorage.getItem(`checklist-items-page-${page}`);
+            if (savedItems) {
+                const loadedItems = JSON.parse(savedItems);
+                return loadedItems.every(item => item.isChecked); // Retorna true se todos os itens estiverem marcados
+            }
+            return false; // Se não houver dados salvos, considera como não completo
+        });
+    }
+
     // Recuperar o estado salvo do localStorage
     useEffect(() => {
         const savedItems = localStorage.getItem(`checklist-items-page-${1}`)
@@ -45,7 +56,7 @@ function Checklist2() {
 
   return (
       <Container>
-          <StepperComponent page={1} />
+          <StepperComponent page={1} completedSteps={getChecklistProgress()} />
           <DivTexts>
               <Title>Consistência Comportamental</Title>
               <Subtitle>Garanta que a interface siga os padrões de UX para uma experiência visual coesa e alinhada.</Subtitle>

@@ -19,7 +19,7 @@ const theme = createTheme({
           cursor: "pointer",
           fontSize: "1rem",
           "@media (max-width: 450px)": {
-            fontSize: "0.70rem", // Reduz o tamanho da fonte em telas pequenas
+            fontSize: "0.70rem",
           },
         },
       },
@@ -34,11 +34,10 @@ const theme = createTheme({
           width: "32px",
           height: "32px",
           "@media (max-width: 450px)": {
-            width: "22px", // Ícones menores em telas pequenas
+            width: "22px",
             height: "22px",
           },
           "&.Mui-active": {
-            background: "linear-gradient(145deg, #A25AAC, #713381)",
             transform: "scale(1.1)",
           },
           "&:hover": {
@@ -53,7 +52,7 @@ const theme = createTheme({
           borderWidth: "3px",
           borderColor: "#d3d3d3",
           "@media (max-width: 450px)": {
-            borderWidth: "2px", // Conector mais fino em telas pequenas
+            borderWidth: "2px",
           },
         },
       },
@@ -61,7 +60,7 @@ const theme = createTheme({
   },
 });
 
-function StepperComponent(props) {
+function StepperComponent({ page, completedSteps }) {
   const navigate = useNavigate()
 
   // Mapeamento das páginas para cada etapa do Stepper
@@ -69,9 +68,9 @@ function StepperComponent(props) {
 
   return (
     <ThemeProvider theme={theme}>
-        <Stepper style={{ width: "100%" }} activeStep={props.page} alternativeLabel >
+        <Stepper style={{ width: "100%" }} activeStep={page} alternativeLabel >
           {steps.map((label, index) => (
-            <Step key={index} >
+            <Step key={index} completed={completedSteps[index]} >
               <StepButton onClick={() => navigate(routes[index])} disabled={false} >
                 {label}
               </StepButton>
