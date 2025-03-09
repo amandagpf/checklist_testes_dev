@@ -36,6 +36,9 @@ export const Container = styled.div`
       gap: 8px;
   }
 
+  @media (max-width: 450px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const DivTexts = styled.div`
@@ -56,7 +59,9 @@ export const Title = styled.h1`
   font-weight: 1000;
   color: #333333;
 
-
+  @media (max-width: 450px) {
+    font-size: 24px;
+  }
 `;
 
 export const Subtitle = styled.h2`
@@ -64,9 +69,13 @@ export const Subtitle = styled.h2`
   font-weight: 500;
   color:rgb(93, 93, 93);
 
-    @media (max-width: 800px) {
+  @media (max-width: 800px) {
     font-size: 20px;
-    }
+  }
+
+  @media (max-width: 450px) {
+    font-size: 16px;
+  }
 `;
 
 export const ChecklistContainer = styled.div`

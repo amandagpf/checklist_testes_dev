@@ -9,7 +9,7 @@ const steps = ["Consistência Visual", "Consistência Comportamental", "Fluxo e 
 const theme = createTheme({
   palette: {
     primary: {
-      main: 'rgb(113, 51, 129)', // Roxo para ativo e completo
+      main: 'rgb(113, 51, 129)',
     },
   },
   components: {
@@ -17,6 +17,10 @@ const theme = createTheme({
       styleOverrides: {
         label: {
           cursor: "pointer",
+          fontSize: "1rem",
+          "@media (max-width: 450px)": {
+            fontSize: "0.70rem", // Reduz o tamanho da fonte em telas pequenas
+          },
         },
       },
     },
@@ -24,15 +28,21 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           cursor: "pointer",
-          transition: 'all 0.3s ease',
-          background: 'radial-gradient(circle, #f0f0f0 0%, #d3d3d3 100%)', 
-          borderRadius: '50%',
-          '&.Mui-active': {
-            background: 'linear-gradient(145deg, #A25AAC, #713381)',
-            transform: 'scale(1.1)',
+          transition: "all 0.3s ease",
+          background: "radial-gradient(circle, #f0f0f0 0%, #d3d3d3 100%)",
+          borderRadius: "50%",
+          width: "32px",
+          height: "32px",
+          "@media (max-width: 450px)": {
+            width: "22px", // Ícones menores em telas pequenas
+            height: "22px",
           },
-          '&:hover': {
-            transform: 'scale(1.15)',
+          "&.Mui-active": {
+            background: "linear-gradient(145deg, #A25AAC, #713381)",
+            transform: "scale(1.1)",
+          },
+          "&:hover": {
+            transform: "scale(1.15)",
           },
         },
       },
@@ -40,12 +50,10 @@ const theme = createTheme({
     MuiStepConnector: {
       styleOverrides: {
         line: {
-          borderWidth: '3px',
-          borderColor: '#d3d3d3',
-        },
-        root: {
-          '&.Mui-active .MuiStepConnector-line, &.Mui-completed .MuiStepConnector-line': {
-            borderColor: 'rgb(113, 51, 129)',
+          borderWidth: "3px",
+          borderColor: "#d3d3d3",
+          "@media (max-width: 450px)": {
+            borderWidth: "2px", // Conector mais fino em telas pequenas
           },
         },
       },

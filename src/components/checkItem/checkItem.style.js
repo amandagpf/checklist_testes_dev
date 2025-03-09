@@ -10,9 +10,15 @@ export const ItemContainer = styled.div`
   margin-bottom: 8px;
   gap: 16px;
 
-    @media (max-width: 576px) {
-      padding: 12px 16px;
-}
+  @media (max-width: 576px) {
+    padding: 12px 16px;
+  }
+
+  @media (max-width: 450px) {
+    width: 100%;
+    justify-content: center;
+    aligin-items: center;
+  }
 `;
 
 export const Checkbox = styled.label`
@@ -55,22 +61,28 @@ export const Description = styled.div`
   gap: 4px;
   cursor: pointer;
 
-      @media (max-width: 576px) {
-      gap: 2px;
-}
+  @media (max-width: 576px) {
+    gap: 2px;
+  }
 `;
 
 export const ItemText = styled.span`
   font-size: 20px;
   color: #333333;
   text-decoration: ${(props) => (props.isChecked ? 'line-through' : 'none')};
+
+  @media (max-width: 450px) {
+    font-size: 16px;
+    font-weight: semi-bold;
+    color: black;
+  }
 `;
 
 export const ItemDescription = styled.span`
   font-size: 18px;
   color:rgb(93, 93, 93);
 
-    @media (max-width: 576px) {
-      font-size: 14px;
-}
+  @media (max-width: 576px) {
+    font-size: 14px;
+  }
 `;
